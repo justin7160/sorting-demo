@@ -1,0 +1,25 @@
+.array-container {
+    position: absolute;
+    left: 100px;
+    bottom: 15px; /* 將容器定位到底部 */
+    display: flex; /* 使用 flexbox 進行排列 */
+    align-items: flex-end; /* 確保條形從底部開始排列 */
+    height: 80vh; /* 設置容器高度，避免條形超出頁面 */
+}
+
+.array-bar {
+    width: 5px; /* 增加線條的寬度 */
+    display: inline-block;
+    margin: 0 3px; /* 減少間距以適應較粗的線條 */
+    position: relative; /* 設置相對定位，方便定位數值 */
+    background-color: black;
+}
+
+.array-bar span {
+    position: absolute;
+    top: -20px; /* 調整數值的位置，使其出現在條形上方 */
+    left: 50%;
+    transform: translateX(-50%); /* 水平置中 */
+    font-size: 10px; /* 減小數字的字體大小 */
+    color: black;
+}
