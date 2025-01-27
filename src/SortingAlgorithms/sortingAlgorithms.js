@@ -75,3 +75,34 @@ function doMerge(
         mainArray[k++] = auxiliaryArray[j++];
     }
 }
+
+export function getBubbleSortAnimations(array) {
+    const animations = [];
+    if (array.length <= 1) return animations;
+    
+    const auxiliaryArray = array.slice();
+    for (let i = 0; i < auxiliaryArray.length - 1; i++) {
+        for (let j = 0; j < auxiliaryArray.length - i - 1; j++) {
+            // 比較時改變顏色
+            animations.push([j, j + 1]);
+            // 恢復顏色
+            animations.push([j, j + 1]);
+            
+            if (auxiliaryArray[j] > auxiliaryArray[j + 1]) {
+                // 交換元素
+                animations.push([j, auxiliaryArray[j + 1]]);
+                animations.push([j + 1, auxiliaryArray[j]]);
+                
+                // 實際進行交換
+                const temp = auxiliaryArray[j];
+                auxiliaryArray[j] = auxiliaryArray[j + 1];
+                auxiliaryArray[j + 1] = temp;
+            } else {
+                // 不需要交換時，保持動畫數組結構一致
+                animations.push([j, auxiliaryArray[j]]);
+                animations.push([j + 1, auxiliaryArray[j + 1]]);
+            }
+        }
+    }
+    return animations;
+}
