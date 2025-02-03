@@ -8,6 +8,7 @@ Sorting Demo(Visualizer) is a web application that provides a visual representat
 
 - Visualization of popular sorting algorithms:
     - Merge Sort
+    - Bubble Sort
 
 ---
 
